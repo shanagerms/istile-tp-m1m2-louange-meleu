@@ -1,140 +1,586 @@
+
+/* =====================================
+   1. VARIABLES ET REGLAGES GENERAUX
+===================================== */
+
 :root {
-  --bleu: #1941B3;
-  --rouge: #FF135A;
-  --vert: #1C8275;
-  --texte: #1a1a2e;
-  --fond: #f5f7fc;
+    --bleu: #1941B3;
+    --rouge: #FF135A;
+    --vert: #1C8275;
+    --fond: #F5F6FA;
+    --blanc: #FFFFFF;
+    --texte: #17213A;
+    --gris: #81899B;
+    --bordure: #E7EAF1;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
-  color: var(--texte);
-  background: var(--fond);
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    line-height: 1.6;
 }
 
-header {
-  padding: 1rem;
-  color: #fff;
-  background: var(--bleu);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-h1 {
-  margin: 0 0 0.5rem;
+
+/* =====================================
+   2. EN-TETE ET NAVIGATION
+===================================== */
+
+.header {
+    min-height: 85px;
+    padding: 0 7%;
+    background: var(--blanc);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--bordure);
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: var(--bleu);
 }
 
-nav a {
-  color: #fff;
+.logo span {
+    color: var(--rouge);
 }
+
+.navigation {
+    display: flex;
+    gap: 35px;
+}
+
+.navigation a {
+    font-size: 12px;
+    font-weight: 650;
+    color: var(--texte);
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: var(--rouge);
+}
+
+.header-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--vert);
+    border-left: 3px solid var(--vert);
+    padding-left: 12px;
+}
+
+
+/* =====================================
+   3. BANNIERE D'ACCUEIL
+===================================== */
 
 main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+    max-width: 1450px;
+    margin: auto;
+    padding: 35px 7%;
 }
 
-section {
-  margin-bottom: 2rem;
-}
-
-h2 {
-  padding-bottom: 0.25rem;
-  color: var(--bleu);
-  border-bottom: 3px solid var(--rouge);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-input,
-button {
-  padding: 0.6rem;
-  font: inherit;
-}
-
-button {
-  color: #fff;
-  cursor: pointer;
-  background: var(--vert);
-  border: 0;
-  border-radius: 6px;
-}
-
-.cartes {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-article {
-  padding: 1rem;
-  background: #fff;
-  border-left: 4px solid var(--rouge);
-  border-radius: 8px;
-}
-
-h3 {
-  margin: 0 0 0.5rem;
-  color: var(--bleu);
-}
-
-article p {
-  margin: 0.25rem 0;
-}
-
-footer {
-  padding: 1rem;
-  color: #fff;
-  text-align: center;
-  background: var(--bleu);
-}
-
-footer p {
-  margin: 0;
-}
-
-a:focus-visible,
-input:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--rouge);
-  outline-offset: 2px;
-}
-
-nav a:focus-visible {
-  outline-color: #fff;
-}
-
-@media (min-width: 640px) {
-  .cartes {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  form {
-    flex-direction: row;
+.hero {
+    min-height: 370px;
+    padding: 55px 60px;
+    background: var(--bleu);
+    color: var(--blanc);
+    display: flex;
     align-items: center;
-  }
-
-  input {
-    flex: 1;
-  }
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px 70px 4px 4px;
 }
 
-@media (min-width: 1024px) {
-  .cartes {
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    right: 8%;
+    top: -120px;
+}
+
+.hero-content {
+    max-width: 680px;
+    z-index: 1;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 2px;
+    color: var(--rouge);
+    margin-bottom: 12px;
+}
+
+.hero .eyebrow {
+    color: #FF9BB8;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 4vw, 55px);
+    line-height: 1.18;
+    letter-spacing: -2px;
+    margin-bottom: 17px;
+}
+
+.hero h1 span {
+    color: #FF9BB8;
+}
+
+.hero-description {
+    font-size: 13px;
+    max-width: 500px;
+    color: rgba(255,255,255,0.8);
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 27px;
+    padding: 13px 22px;
+    background: var(--rouge);
+    color: white;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: white;
+    color: var(--bleu);
+    transform: translateY(-4px);
+}
+
+.hero-number {
+    position: relative;
+    z-index: 1;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.hero-number span {
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.13);
+    line-height: 1;
+}
+
+.hero-number p {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: white;
+}
+
+
+/* =====================================
+   4. PRESENTATION ET RECHERCHE
+===================================== */
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin: 65px 0 40px;
+}
+
+.intro h2,
+.section-heading h2 {
+    font-size: 31px;
+    letter-spacing: -1px;
+    color: var(--texte);
+}
+
+.intro h2 span {
+    color: var(--rouge);
+}
+
+.intro > div > p:last-child {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+.search-form {
+    width: 390px;
+    max-width: 100%;
+}
+
+.search-form label {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid var(--bordure);
+    background: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 11px;
+    background: transparent;
+}
+
+.search-box input:focus {
+    outline: 2px solid var(--bleu);
+    outline-offset: -2px;
+}
+
+.search-box button {
+    border: none;
+    background: var(--bleu);
+    color: white;
+    padding: 0 15px;
+    font-size: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.search-box button:hover {
+    background: var(--rouge);
+}
+
+
+/* =====================================
+   5. SECTION ETUDIANTS
+===================================== */
+
+.students-section {
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--bordure);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.student-count {
+    color: var(--vert);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: #EAF5F2;
+    padding: 9px 15px;
+    border-radius: 3px;
+}
+
+.student-grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-  }
+    gap: 20px;
+}
+
+
+/* =====================================
+   6. CARTES ETUDIANTS
+===================================== */
+
+.student-card {
+    background: #FAFBFD;
+    border: 1px solid var(--bordure);
+    padding: 23px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.student-card::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 0;
+    background: var(--rouge);
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.student-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(25, 65, 179, 0.09);
+    background: white;
+}
+
+.student-card:hover::before {
+    height: 100%;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: 1px;
+    color: var(--gris);
+}
+
+.status {
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 8px;
+}
+
+.admitted {
+    color: var(--vert);
+    background: #E7F4F0;
+}
+
+.refused {
+    color: var(--rouge);
+    background: #FFF0F4;
+}
+
+.avatar {
+    width: 57px;
+    height: 57px;
+    display: grid;
+    place-items: center;
+    margin: 25px 0 13px;
+    border-radius: 50%;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.blue-avatar {
+    background: #E9EEFF;
+    color: var(--bleu);
+}
+
+.red-avatar {
+    background: #FFE9EF;
+    color: var(--rouge);
+}
+
+.green-avatar {
+    background: #E5F3EF;
+    color: var(--vert);
+}
+
+.student-card h3 {
+    font-size: 17px;
+    color: var(--texte);
+}
+
+.level {
+    font-size: 10px;
+    color: var(--gris);
+}
+
+.card-details {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--bordure);
+}
+
+.card-details p {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 9px 0;
+    font-size: 10px;
+    color: var(--gris);
+}
+
+.card-details strong {
+    color: var(--texte);
+    text-align: right;
+}
+
+.card-details .grade {
+    color: var(--bleu);
+    font-size: 13px;
+}
+
+
+/* =====================================
+   7. CONTACT
+===================================== */
+
+.contact-section {
+    margin: 55px 0 35px;
+    padding: 35px 40px;
+    background: #E9EDF9;
+    border-left: 5px solid var(--vert);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-section h2 {
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.contact-section a {
+    background: var(--vert);
+    color: white;
+    padding: 13px 20px;
+    font-size: 10px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.contact-section a:hover {
+    background: var(--bleu);
+    transform: translateY(-3px);
+}
+
+
+/* =====================================
+   8. PIED DE PAGE
+===================================== */
+
+.footer {
+    background: white;
+    border-top: 1px solid var(--bordure);
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer p {
+    font-size: 10px;
+    color: var(--gris);
+}
+
+
+/* =====================================
+   9. RESPONSIVE
+===================================== */
+
+@media (max-width: 950px) {
+
+    .header {
+        padding: 18px 4%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .navigation {
+        gap: 18px;
+    }
+
+    .header-label {
+        display: none;
+    }
+
+    main {
+        padding: 25px 4%;
+    }
+
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .navigation a {
+        white-space: nowrap;
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 35px 23px;
+        min-height: 330px;
+        border-radius: 4px 35px 4px 4px;
+    }
+
+    .hero-number {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .intro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .students-section {
+        padding: 18px;
+    }
+
+    .student-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .contact-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 27px 22px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

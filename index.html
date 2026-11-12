@@ -1,75 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ISTILE Annuaire</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTILE | Annuaire académique</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>ISTILE Annuaire</h1>
-    <nav>
-      <a href="#recherche">Recherche</a>
-      <a href="#etudiants">Étudiants</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <section id="recherche">
-      <h2>Recherche</h2>
-      <form>
-        <label for="champ-recherche">Rechercher un étudiant</label>
-        <input type="search" id="champ-recherche" name="recherche">
-        <button type="submit">Rechercher</button>
-      </form>
-    </section>
+    <header class="header">
+        <a href="#" class="logo">ISTILE<span>.</span></a>
 
-    <section id="etudiants">
-      <h2>Étudiants</h2>
-      <div class="cartes">
-        <article>
-          <h3>Aïcha Ngo</h3>
-          <p>Filière : Informatique</p>
-          <p>Note : 14</p>
-        </article>
-        <article>
-          <h3>Paul Tchinda</h3>
-          <p>Filière : Réseaux</p>
-          <p>Note : 9</p>
-        </article>
-        <article>
-          <h3>Marie Fotso</h3>
-          <p>Filière : Génie logiciel</p>
-          <p>Note : 16</p>
-        </article>
-        <article>
-          <h3>Christelle Nkou</h3>
-          <p>Filière : Informatique</p>
-          <p>Note : 11.5</p>
-        </article>
-        <article>
-          <h3>Brice Essomba</h3>
-          <p>Filière : Réseaux</p>
-          <p>Note : 7.5</p>
-        </article>
-        <article>
-          <h3>Linda Mvondo</h3>
-          <p>Filière : Génie logiciel</p>
-          <p>Note : 13</p>
-        </article>
-      </div>
-    </section>
+        <nav class="navigation">
+            <a href="#accueil">Accueil</a>
+            <a href="#etudiants">Étudiants</a>
+            <a href="#recherche">Recherche</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Secrétariat académique : <a href="mailto:secretariat@istile.cm">secretariat@istile.cm</a></p>
-    </section>
-  </main>
+        <div class="header-label">ESPACE ACADÉMIQUE</div>
+    </header>
 
-  <footer>
-    <p>© 2026 ISTILE Annuaire</p>
-  </footer>
+    <main>
+
+        <section class="hero" id="accueil">
+            <div class="hero-content">
+                <p class="eyebrow">INSTITUT SUPÉRIEUR ISTILE</p>
+                <h1>Le talent se construit.<br>
+                    <span>L'excellence se révèle.</span>
+                </h1>
+                <p class="hero-description">
+                    Bienvenue dans notre espace numérique dédié à la
+                    découverte des étudiants et de leurs parcours académiques.
+                </p>
+                <a href="#etudiants" class="hero-button">Découvrir les étudiants →</a>
+            </div>
+
+            <div class="hero-number">
+                <span>01</span>
+                <p>ANNUAIRE<br>ACADÉMIQUE</p>
+            </div>
+        </section>
+
+        <section class="intro" id="recherche">
+            <div>
+                <p class="eyebrow">NOTRE COMMUNAUTÉ</p>
+                <h2>Les visages de l'ISTILE<span>.</span></h2>
+                <p>Explorez les profils et les performances de nos étudiants.</p>
+            </div>
+
+            <form class="search-form">
+                <label for="champ-recherche">Rechercher un étudiant</label>
+                <div class="search-box">
+                    <input type="search" id="champ-recherche"
+                           placeholder="Nom, prénom ou filière...">
+                    <button type="submit">Rechercher</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="students-section" id="etudiants">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PROMOTION ACADÉMIQUE</p>
+                    <h2>Nos étudiants</h2>
+                </div>
+                <span class="student-count">06 PROFILS</span>
+            </div>
+
+            <div class="student-grid">
+
+                <article class="student-card">
+                    <div class="card-top">
+                        <span>ÉTUDIANT 01</span>
+                        <span class="status admitted">ADMIS</span>
+                    </div>
+                    <div class="avatar blue-avatar">AN</div>
+                    <h3>Aïcha Ngo</h3>
+                    <p class="level">Niveau L3</p>
+                    <div class="card-details">
+                        <p>Filière <strong>Informatique</strong></p>
+                        <p>Note <strong class="grade">14/20</strong></p>
+                    </div>
+                </article>
+
+                <article class="student-card">
+                    <div class="card-top">
+                        <span>ÉTUDIANT 02</span>
+                        <span class="status refused">NON ADMIS</span>
+                    </div>
+                    <div class="avatar red-avatar">PT</div>
+                    <h3>Paul Tchinda</h3>
+                    <p class="level">Niveau L3</p>
+                    <div class="card-details">
+                        <p>Filière <strong>Réseaux</strong></p>
+                        <p>Note <strong class="grade">9/20</strong></p>
+                    </div>
+                </article>
+
+                <article class="student-card">
+                    <div class="card-top">
+                        <span>ÉTUDIANT 03</span>
+                        <span class="status admitted">ADMIS</span>
+                    </div>
+                    <div class="avatar green-avatar">MF</div>
+                    <h3>Marie Fotso</h3>
+                    <p class="level">Niveau L3</p>
+                    <div class="card-details">
+                        <p>Filière <strong>Génie logiciel</strong></p>
+                        <p>Note <strong class="grade">16/20</strong></p>
+                    </div>
+                </article>
+
+                <article class="student-card">
+                    <div class="card-top">
+                        <span>ÉTUDIANT 04</span>
+                        <span class="status admitted">ADMIS</span>
+                    </div>
+                    <div class="avatar red-avatar">CN</div>
+                    <h3>Christelle Nkou</h3>
+                    <p class="level">Niveau L3</p>
+                    <div class="card-details">
+                        <p>Filière <strong>Informatique</strong></p>
+                        <p>Note <strong class="grade">11.5/20</strong></p>
+                    </div>
+                </article>
+
+                <article class="student-card">
+                    <div class="card-top">
+                        <span>ÉTUDIANT 05</span>
+                        <span class="status refused">NON ADMIS</span>
+                    </div>
+                    <div class="avatar blue-avatar">BE</div>
+                    <h3>Brice Essomba</h3>
+                    <p class="level">Niveau L3</p>
+                    <div class="card-details">
+                        <p>Filière <strong>Réseaux</strong></p>
+                        <p>Note <strong class="grade">7.5/20</strong></p>
+                    </div>
+                </article>
+
+                <article class="student-card">
+                    <div class="card-top">
+                        <span>ÉTUDIANT 06</span>
+                        <span class="status admitted">ADMIS</span>
+                    </div>
+                    <div class="avatar green-avatar">LM</div>
+                    <h3>Linda Mvondo</h3>
+                    <p class="level">Niveau L3</p>
+                    <div class="card-details">
+                        <p>Filière <strong>Génie logiciel</strong></p>
+                        <p>Note <strong class="grade">13/20</strong></p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div>
+                <p class="eyebrow">RESTONS EN CONTACT</p>
+                <h2>Construisons ensemble<br>l'avenir de demain.</h2>
+            </div>
+
+            <a href="mailto:secretariat@istile.cm">
+                Contacter le secrétariat →
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <a href="#" class="logo">ISTILE<span>.</span></a>
+        <p>Innovation · Formation · Excellence</p>
+        <p>© 2026 ISTILE - Tous droits réservés.</p>
+    </footer>
+
 </body>
 </html>
